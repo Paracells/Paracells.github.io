@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #2b313b;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+/* video section */
+
+.video__section {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  z-index: -1;
+}
+
+header h1 {
+  font-family: "Anaheim", sans-serif;
+  color: rgb(139, 13, 30);
+  font-size: 10rem;
+}
+
+/* form */
+
+section .wrapper .form-main {
+  font-family: "Consolas";
+  opacity: 0.7;
+  padding: 50px;
+  text-decoration: none;
+  border-radius: 30px;
+  color: rgb(177, 176, 204);
+  background-color: #282f3eaa;
+  transition: opacity 0.4s ease;
+}
+section .wrapper .form-main:hover {
+  opacity: 1;
+}
+input,
+button {
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  background-color: #1b2029;
+  border-radius: 30px;
+  text-align: center;
+  margin: 0 5px;
+  color: #fff;
+  transition: background-color 0.4s ease;
+}
+::placeholder {
+  color: #fff;
+}
+
+button {
+  width: 200px;
+  border-radius: 10px;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+input:hover,
+button:hover {
+  background-color: #3e485c;
+}
+
+/* section 2 */
+.image__text-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1200px;
+  margin: 0 auto;
+  height: 600px;
+}
+
+.image__text-button .left-img {
+  flex: 1;
+  height: 60%;
+  margin-right: 10px;
+  transition: transform 0.2s linear;
+  border: 1px solid rgb(112, 124, 146);
+}
+
+.image__text-button .left-img:hover {
+  transform: scale(1.4);
+}
+.image__text-button .right__flex {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.image__text-button .right__flex .text {
+  color: #eee;
+  font-size: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: justify;
+}
