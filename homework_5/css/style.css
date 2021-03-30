@@ -1,0 +1,243 @@
+body {
+  width: 100vw;
+  font-family: Roboto;
+}
+.container {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: 715px 427px 427px 715px;
+  grid-template-areas:
+    "img img grid-right"
+    "left-drawing right-drawing-one right-drawing-one"
+    "left-drawing right-drawing-two right-drawing-two"
+    "left-third right-third right-third";
+  /* ". right-drawing-two"; */
+  max-width: 1366px;
+}
+.img-left {
+  grid-area: img;
+}
+
+.grid-right {
+  background-color: #f3f3f3;
+  display: grid;
+  grid-area: grid-right;
+  grid-template-rows: 57px repeat(3, minmax(min-content, max-content)) 71px;
+  grid-template-areas:
+    "btn"
+    "right-text"
+    "down-text";
+  padding-left: 54px;
+  align-content: space-evenly;
+}
+.btn {
+  width: 34px;
+  height: 30px;
+  grid-area: btn;
+  grid-row: 1/3;
+}
+.right-text {
+  grid-area: right-text;
+  font-size: 40px;
+  letter-spacing: 1.2px;
+  line-height: 57px;
+  text-align: left;
+  max-width: 293px;
+}
+.down-text {
+  grid-area: down-text;
+  line-height: 28px;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.54px;
+  text-align-last: left;
+  padding-right: 49px;
+  color: #262f32;
+  text-align: left;
+}
+
+/* section second */
+
+.card__one,
+.card__two,
+.card__three {
+  margin: 57px 87px 50px 58px;
+}
+
+.card__two {
+  margin-bottom: 49px;
+}
+
+.card__three {
+  margin-bottom: 42px;
+}
+
+.description-text,
+.description-text--top {
+  font-size: 45px;
+  line-height: 1.47;
+  letter-spacing: 1.35px;
+  font-weight: 300;
+  margin-bottom: 27px;
+  margin-top: 57px;
+}
+
+.description-text--top {
+  margin-top: 0;
+}
+
+.emph {
+  font-weight: 900;
+}
+
+.main__card-text,
+.main__card-text--right,
+.main__card-text--right-down {
+  opacity: 0.88;
+  font-size: 15.6px;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.47px;
+}
+
+.main__card-text--right-down {
+  opacity: 0.7;
+}
+
+.right-button,
+.right-button-down {
+  cursor: pointer;
+  width: 208px;
+  height: 44px;
+  padding-top: 4px;
+  border: solid 1px #262f32;
+  line-height: 1.93;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #262f32;
+  font-weight: 400;
+  border-radius: 10px;
+  margin-top: 37px;
+}
+
+.right-button-down {
+  color: white;
+  border-color: white;
+}
+
+.left-drawing {
+  grid-area: left-drawing;
+  background: url("../img/left-img.png") center center/cover no-repeat;
+  color: white;
+  text-align: left;
+  width: 614px;
+  grid-column: 1/3;
+}
+
+.right-drawing-one {
+  grid-area: right-drawing-one;
+  background: url("../img/right-up-img-sec1.png") center center/cover
+    no-repeat;
+}
+
+.right-drawing-two {
+  grid-area: right-drawing-two;
+  background: url("../img/right-down-img-sec1.png") center center/cover
+    no-repeat;
+  color: white;
+}
+
+.right-card {
+  margin-left: 53px;
+  margin-right: 142px;
+}
+
+/* third section */
+.left__third-page,
+.right__third-page {
+  color: white;
+  padding-left: 56px;
+  padding-right: 40px;
+  padding-top: 56px;
+}
+.left__third-page {
+  grid-area: left-third;
+  background: url("../img/left-down-img-sec2.png") center center/cover
+    no-repeat;
+}
+
+.left__logo {
+  margin-top: 211px;
+  margin-bottom: 21px;
+}
+
+.left__author {
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1.57;
+  letter-spacing: 1.26px;
+  text-align: left;
+}
+
+.left__profession {
+  font-size: 16.6px;
+  font-weight: 400;
+  line-height: 3.98;
+  letter-spacing: 0.5px;
+}
+.right__third-page {
+  grid-area: right-third;
+  background: url("../img/right-down-img-sec2.png") center center/cover;
+}
+.form-main {
+  width: 617px;
+  margin-bottom: 89px;
+}
+.form-text,
+.form-textarea {
+  background-color: transparent;
+  border: 1px solid #fff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  margin-right: 13px;
+  color: white;
+}
+
+.form-text {
+  width: 44%;
+}
+.form-text:nth-of-type(2) {
+  margin-right: 0;
+}
+
+.form-text::placeholder,
+.form-textarea {
+  font-weight: 400;
+  font-size: 16.57px;
+  letter-spacing: 0.03em;
+  line-height: 32px;
+  text-align: left;
+}
+
+.form-textarea {
+  font: inherit;
+  display: block;
+  resize: none;
+  margin-right: 0;
+}
+
+.right__simple-text {
+  font-size: 16.6px;
+  font-weight: 400;
+  line-height: 1.93;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.right__icons {
+  margin-bottom: 40px;
+}
