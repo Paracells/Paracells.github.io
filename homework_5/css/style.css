@@ -22,15 +22,15 @@ body {
 }
 .img-left {
   grid-area: img;
-  background: url('../img/top-img.png') center center/cover no-repeat;
+  background: url("../img/top-img.png") center center/cover no-repeat;
 }
 
 .grid-right {
   background-color: #f3f3f3;
   display: grid;
   grid-area: grid-right;
-  grid-template-rows: 57px repeat(3, auto) 71px;
-  grid-template-columns: 1fr;
+  grid-template-rows: 71px repeat(3, auto);
+  grid-template-columns: auto;
   grid-template-areas:
     "btn"
     "right-text"
@@ -40,11 +40,32 @@ body {
   padding-right: 49px;
 }
 .btn {
-  width: 34px;
-  height: 30px;
   grid-area: btn;
   grid-row: 1/3;
+
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  width: 33px;
+  height: 29px;
 }
+.dash {
+  background-color: #000;
+  height: 3px;
+  width: 100%;
+  position: absolute;
+}
+.line1 {
+  top: 0;
+}
+.line2 {
+  top: 13px;
+}
+.line3 {
+  top: 26px;
+}
+
 .right-text {
   grid-area: right-text;
   font-size: 40px;
@@ -58,9 +79,7 @@ body {
   line-height: 28px;
   font-size: 18px;
   font-weight: 400;
-  letter-spacing: 0.54px;
-  text-align-last: left;
-  padding-right: 49px;
+  letter-spacing: 0.2px;
   color: #262f32;
   text-align: left;
 }
