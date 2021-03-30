@@ -29,7 +29,7 @@ body {
   background-color: #f3f3f3;
   display: grid;
   grid-area: grid-right;
-  grid-template-rows: 71px repeat(3, auto);
+  grid-template-rows: repeat(3, auto);
   grid-template-columns: auto;
   grid-template-areas:
     "btn"
@@ -268,9 +268,141 @@ body {
   font-weight: 400;
   line-height: 1.93;
   letter-spacing: 0.5px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .right__icons {
-  margin-bottom: 40px;
+  margin-bottom: 60px;
+}
+
+/* media */
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .right-button,
+  .right-button-down {
+    margin-top: 15px;
+  }
+  .description-text,
+  .description-text--top {
+    font-size: 32px;
+  }
+  .container {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "img grid-right  grid-right"
+      "left-drawing  right-drawing-one right-drawing-one"
+      "left-drawing  right-drawing-two right-drawing-two"
+      "left-third   right-third right-third";
+  }
+  .left-drawing {
+    width: 458px;
+  }
+  .card__one,
+  .card__two,
+  .card__three {
+    width: 100%;
+    margin: auto;
+  }
+  .card__three {
+    margin-bottom: 57px;
+  }
+
+  .form-text {
+    width: 43%;
+  }
+
+  .grid-right {
+    background-color: #f3f3f3;
+    display: grid;
+    grid-area: grid-right;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: auto;
+    grid-template-areas:
+      "right-text"
+      "down-text";
+    align-content: space-evenly;
+    padding-left: 54px;
+    padding-right: 49px;
+  }
+  .btn {
+    margin-top: 15px;
+  }
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 320px) and (max-width: 991px) {
+  .container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "img"
+      "grid-right"
+      "left-drawing"
+      "right-drawing-one"
+      "right-drawing-two"
+      "right-third"
+      "left-third";
+  }
+  .left-drawing {
+    width: 100%;
+  }
+  .img-left {
+    height: 500px;
+  }
+
+  .grid-right {
+    background-color: #f3f3f3;
+    display: grid;
+    grid-area: grid-right;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    grid-template-areas:
+      "right-text"
+      "down-text";
+    align-content: space-evenly;
+    padding-left: 20px;
+    padding-right: 49px;
+  }
+
+  .btn {
+    margin-top: 15px;
+  }
+
+  .right-button,
+  .right-button-down {
+    margin-top: 17px;
+    margin-bottom: 17px;
+  }
+  .form-main {
+    width: 100%;
+  }
+  .form-text {
+    width: 45%;
+  }
+  .form-textarea {
+    width: 92%;
+  }
+  .left__third-page {
+    width: 100%;
+  }
+
+  .card__one, .card__two, .card__three, .right-card{
+    margin-left: 20px;
+  }
+
+  .left__third-page, .right__third-page{
+    padding-left: 20px;
+  }
+
+  .form-text, .form-textarea{
+    width: 93%;
+  }
+  
+  .description-text, .description-text--top, .left__author, .right-text{
+    font-size: 32px;
+  }
+  
 }
