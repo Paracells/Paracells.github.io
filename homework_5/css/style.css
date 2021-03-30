@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   width: 100vw;
   font-family: Roboto;
@@ -5,31 +11,33 @@ body {
 .container {
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(5, auto);
   grid-template-rows: 715px 427px 427px 715px;
   grid-template-areas:
-    "img img grid-right"
-    "left-drawing right-drawing-one right-drawing-one"
-    "left-drawing right-drawing-two right-drawing-two"
-    "left-third right-third right-third";
-  /* ". right-drawing-two"; */
+    "img img img img grid-right"
+    "left-drawing left-drawing right-drawing-one right-drawing-one right-drawing-one"
+    "left-drawing left-drawing right-drawing-two right-drawing-two right-drawing-two"
+    "left-third right-third right-third right-third right-third";
   max-width: 1366px;
 }
 .img-left {
   grid-area: img;
+  background: url('../img/top-img.png') center center/cover no-repeat;
 }
 
 .grid-right {
   background-color: #f3f3f3;
   display: grid;
   grid-area: grid-right;
-  grid-template-rows: 57px repeat(3, minmax(min-content, max-content)) 71px;
+  grid-template-rows: 57px repeat(3, auto) 71px;
+  grid-template-columns: 1fr;
   grid-template-areas:
     "btn"
     "right-text"
     "down-text";
-  padding-left: 54px;
   align-content: space-evenly;
+  padding-left: 54px;
+  padding-right: 49px;
 }
 .btn {
   width: 34px;
@@ -137,8 +145,7 @@ body {
 
 .right-drawing-one {
   grid-area: right-drawing-one;
-  background: url("../img/right-up-img-sec1.png") center center/cover
-    no-repeat;
+  background: url("../img/right-up-img-sec1.png") center center/cover no-repeat;
 }
 
 .right-drawing-two {
@@ -158,13 +165,12 @@ body {
 .right__third-page {
   color: white;
   padding-left: 56px;
-  padding-right: 40px;
   padding-top: 56px;
 }
 .left__third-page {
   grid-area: left-third;
-  background: url("../img/left-down-img-sec2.png") center center/cover
-    no-repeat;
+  background: url("../img/left-down-img-sec2.png") center center/cover no-repeat;
+  width: 458px;
 }
 
 .left__logo {
@@ -221,8 +227,13 @@ body {
   letter-spacing: 0.03em;
   line-height: 32px;
   text-align: left;
+  color: white;
 }
 
+.form-text:focus,
+.form-textarea:focus {
+  outline: none;
+}
 .form-textarea {
   font: inherit;
   display: block;
@@ -230,6 +241,9 @@ body {
   margin-right: 0;
 }
 
+.form-textarea::placeholder {
+  color: white;
+}
 .right__simple-text {
   font-size: 16.6px;
   font-weight: 400;
