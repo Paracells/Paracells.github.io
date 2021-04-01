@@ -395,3 +395,38 @@ height: 290px;
   justify-self: center;
   padding: 21px 40px 21px 36px;
 }
+
+.love__image {
+  grid-row: 35/42;
+  grid-column: 1/18;
+  margin-bottom: 40px;
+}
+
+.love__text,
+.love__image--author {
+  grid-row: 34/42;
+  grid-column: 5/14;
+  font-family: Raleway;
+  margin-right: 75px;
+  font-size: 60px;
+  font-weight: 700;
+  /* margin: auto; */
+  color: #ffffff;
+  align-self: center;
+  /* width: 825px; */
+  text-align: center;
+  font-stretch: normal;
+  font-style: normal;
+}
+.love__text{
+}
+.love__image--author {
+  grid-row: 36/44;
+  grid-column: 5/14;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 60px;
+}
+.love__image-underline {
+  text-decoration: underline;
+}
