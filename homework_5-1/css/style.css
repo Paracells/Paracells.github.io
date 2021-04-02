@@ -497,32 +497,26 @@ height: 290px;
   margin-right: 16px;
 }
 
-/* .footer {
-  background-color: #fff;
-  grid-row: 54/70;
-  grid-column: 1/18;
-} */
-
 .header__text,
 .link__text,
+.link__text--address,
 .link__text--subscribe {
   font-family: Montserrat;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 600;
   line-height: 2.13;
   letter-spacing: 2.4px;
   text-align: left;
   color: #000000;
-}
-
-.link__text {
-  font-size: 16px;
-  font-weight: 600;
   text-decoration: none;
+}
+.link__text--address {
+  display: inline;
 }
 
 .header__text {
   margin-bottom: 27px;
+  font-size: 20px;
 }
 
 .footer__browse,
@@ -535,12 +529,10 @@ height: 290px;
   padding-top: 126px;
 }
 
-
-
 .footer__flex {
   display: flex;
   justify-content: space-evenly;
-  grid-row: 54/70;
+  grid-row: 54/59;
   grid-column: 1/18;
   background-color: #fff;
 }
@@ -580,4 +572,34 @@ input[type="email"] {
   line-height: 1.2;
   margin-bottom: 20px;
   margin-top: -10px;
+}
+
+.footer__copyright {
+  background-color: rgba(234, 238, 241, 1);
+  grid-row: 59/60;
+  grid-column: 1/18;
+}
+
+.footer__copyright--text {
+  grid-row: 59/60;
+  grid-column: 2/9;
+  font-family: "Montserrat";
+  font-size: 16px;
+  color: rgba(0, 0, 0, 1);
+  letter-spacing: 0.15em;
+  line-height: 34px;
+  font-weight: 600;
+  margin-left: 33px;
+  align-self: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.social__icons {
+  min-width: 350px;
+  display: flex;
+  justify-content: space-around;
+  grid-row: 59/60;
+  grid-column:13/14;
+  align-self: center;
 }
