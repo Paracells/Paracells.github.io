@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #202531;
+  font-family: "Rubik", sans-serif;
+}
+
+.digit,
+.sign,
+.equal__sign,
+.reset__btn {
+  font-family: "Rubik", sans-serif;
+  width: 106px;
+  height: 106px;
+  font-size: 40px;
+  margin-bottom: 32px;
+  margin-left: 16px;
+  margin-right: 16px;
+  background-color: #283345;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  background: #283345;
+  box-shadow: 9px 9px 18px #202837, -9px -9px 18px #303e53;
+  transition: box-shadow 0.5s ease;
+  cursor: pointer;
+}
+
+.digit:focus,
+.sign:focus,
+.equal__sign:focus,
+.reset__btn:focus {
+  outline: none;
+}
+
+.active {
+  transition: background-color 0.5s ease;
+  background-color: #394862;
+}
+
+.digit:hover,
+.sign:hover,
+.equal__sign:hover,
+.reset__btn:hover {
+  box-shadow: 9px 9px 18px #171e28, -9px -9px 18px #394862;
+}
+
+.digit:disabled,
+.sign:disabled,
+.equal__sign:disabled {
+  background-color: #394862;
+}
+
+.digit.double {
+  width: 248px;
+}
+
+.orange {
+  color: #fc9406;
+}
+.container {
+  flex-wrap: wrap;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+
+  justify-content: space-evenly;
+  width: 600px;
+  height: 865px;
+  background-color: #283345;
+  border: 1px solid darkcyan;
+  flex-direction: column;
+  text-align: center;
+}
+
+.result {
+  font-family: "Rubik", sans-serif;
+  color: #fff;
+  font-size: 7rem;
+  height: 133px;
+  overflow: hidden;
+}
+
+.expression {
+  align-self: flex-end;
+  margin-right: 32px;
+  color: #aaa;
+  font-size: 3rem;
+  height: 57px;
+}
