@@ -5,7 +5,7 @@ const expression = document.querySelector(".expression");
 const equal = document.querySelector(".equal__sign");
 const resetBtn = document.querySelector(".reset__btn");
 
-const signArray = ["-", "=", "+", "/", "*", "Enter"];
+const signArray = ["-", "=", "+", "/", "*", "enter"];
 
 let signFlag = false; // знак флага, говорящий о том, что дальше может быть только 2е число или сброс
 let operation = "";
@@ -16,7 +16,6 @@ let lockKeyboard = false; // блокируем клавиатуру после 
 // считываем клавиатуру
 document.addEventListener("keyup", (e) => {
   const pressed = e.key.toLowerCase();
-  console.log(pressed);
   if (!lockKeyboard) {
     if (pressed >= 0 && pressed <= 9) {
       runAnimationHover(pressed);
@@ -24,7 +23,7 @@ document.addEventListener("keyup", (e) => {
         result.innerText += pressed;
       }
     } else {
-      if (signArray.includes(pressed)) {
+      if (signArray.includes(pressed) || signFlag) {
         findOperation(pressed);
       }
     }
@@ -64,7 +63,7 @@ resetBtn.addEventListener("click", () => {
 
 // считаем по кнопкам клавиатуры
 function findOperation(e) {
-  if (e == "=" || e == "Enter") {
+  if (e == "=" || e == "enter") {
     if (firstNumber && emptyText()) {
       calculate();
       lockKeyboard = true;
