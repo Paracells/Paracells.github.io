@@ -101,4 +101,7 @@ body {
 
 .help {
   color: #fff;
+  font-family: "Consolas", Courier, monospace;
+  font-size: 18px;
+  font-weight: 400;
 }
