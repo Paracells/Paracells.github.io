@@ -34,8 +34,9 @@ document.addEventListener("keyup", (e) => {
 });
 
 // печатаем значения в поле ввода
-allDigitBtn.forEach((btn) => {
+allDigitBtn.forEach((btn, index) => {
   btn.addEventListener("click", () => {
+    runAnimationHover(btn.textContent);
     if (checkLength()) {
       result.innerText += btn.textContent;
     }
@@ -49,9 +50,9 @@ allSigns.forEach((sign) => {
   });
 });
 
-// считаем выражение
+// кнопка равно, считает выражение
 equal.addEventListener("click", () => {
-  if (emptyText()) {
+  if (firstNumber !== "" && emptyText()) {
     calculate();
   }
 });
@@ -64,7 +65,7 @@ resetBtn.addEventListener("click", () => {
 // считаем по кнопкам клавиатуры
 function findOperation(e) {
   if (e == "=" || e == "enter") {
-    if (firstNumber && emptyText()) {
+    if (firstNumber !== "" && emptyText()) {
       calculate();
       lockKeyboard = true;
     }
@@ -77,7 +78,7 @@ function findOperation(e) {
 function checkNumbers(sign) {
   if (emptyText()) {
     if (!signFlag) {
-      operation = sign;
+      operation = sign === "*" ? "x" : sign;
       firstNumber = +result.textContent;
       expression.innerText += ` ${firstNumber} ${operation}`;
       result.textContent = "";
@@ -94,14 +95,14 @@ function toggleSign(flag) {
   });
 }
 
-// проверка на введённые цифры в поле ввода
+// проверка на то, что поле не пустое
 function emptyText() {
   return result.textContent.length;
 }
 
+// проверка длины результата, если цифр больше 7, то будешь уменьшать шрифт
 function checkLength() {
-  const length = emptyText();
-  return length < 7;
+  return emptyText() < 7;
 }
 
 // считаем выражение
@@ -116,8 +117,8 @@ function calculate() {
       const resultMult = (+firstNumber * secondNumber).toString();
       if (resultMult.split("").length > 7) {
         result.style.fontSize = "4rem";
-        result.innerText = resultMult;
       }
+      result.innerText = resultMult;
       break;
     case "-":
       result.innerText = firstNumber - secondNumber;
@@ -136,12 +137,14 @@ function calculate() {
   }
 }
 
+// эффект нажатия
 function runAnimationHover(e) {
   allDigitBtn[allDigitBtn[e].dataset.index].classList.toggle("active");
   setTimeout(() => {
     allDigitBtn.forEach((btn) => btn.classList.remove("active"));
   }, 150);
 }
+
 // disabled на цифры
 function toggleDigit(flag) {
   allDigitBtn.forEach((btn) => {
@@ -149,6 +152,7 @@ function toggleDigit(flag) {
   });
   equal.disabled = flag;
 }
+
 // сбрасываем поля, значения, активируем кнопки на default
 function reset() {
   toggleDigit(false);
